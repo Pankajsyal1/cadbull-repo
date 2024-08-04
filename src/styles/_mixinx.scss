@@ -1,0 +1,515 @@
+.btn {
+  border-radius: $borderRadius;
+  padding: 12px 24px;
+  box-shadow: 0px 3px 0px #00000029;
+  font: normal normal 500 14px/1 'Poppins', sans-serif;
+
+  @media all and (max-width: 767px) {
+    font: normal normal 500 12px/1 'Poppins', sans-serif;
+    padding: 10px 20px;
+  }
+}
+
+.btn-lg {
+  padding: 12px 24px !important;
+}
+
+
+// ************ Variable Button mixins ************
+@mixin variable-button($bgColor, $borderColor, $color) {
+  background-color: $bgColor;
+  border-color: $borderColor ;
+  color: $color;
+  border-radius: 0;
+  position: relative;
+}
+
+// ************ Primary Button ************ 
+.btn-primary {
+  @include variable-button($primary, $primary, $white, );
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: $primary;
+    border-color: $primary;
+    animation: pulse-primary 1s;
+    box-shadow: 0 0 0 0.5em transparent;
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+  }
+
+  @keyframes pulse-primary {
+    0% {
+      box-shadow: 0 0 0 0 $primary;
+    }
+  }
+}
+
+// ************ Light Button ************
+.btn-light {
+  @include variable-button($white, $white, $primary);
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: $white;
+    border-color: $white;
+    animation: pulse-light 1s;
+    box-shadow: 0 0 0 0.75em transparent;
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+  }
+
+  @keyframes pulse-light {
+    0% {
+      box-shadow: 0 0 0 0 $white;
+    }
+  }
+}
+
+// ************ Seondary Button ************
+.btn-secondary {
+  @include variable-button($secondary, $secondary, $white);
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: $secondary;
+    border-color: $secondary;
+    animation: pulse-secondary 1s;
+    box-shadow: 0 0 0 0.5em transparent;
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+  }
+
+  @keyframes pulse-secondary {
+    0% {
+      box-shadow: 0 0 0 0 $secondary;
+    }
+  }
+}
+
+
+// ************ Danger Button ************
+.btn-danger {
+  @include variable-button($danger, $white, $primary);
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: $danger;
+    border-color: $danger;
+    animation: pulse-danger 1s;
+    box-shadow: 0 0 0 0.5em transparent;
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+  }
+
+  @keyframes pulse-danger {
+    0% {
+      box-shadow: 0 0 0 0 $danger;
+    }
+  }
+}
+
+// ************ Transparent Button ************
+.transparent-btn {
+  background-color: transparent;
+  color: $primary;
+  padding: 0;
+  font-weight: 700;
+  position: relative;
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+
+  &::before {
+    position: absolute;
+    content: '';
+    background-color: $borderLightColor;
+    width: 20px;
+    height: 12px;
+    bottom: 0px;
+    left: -8px;
+    z-index: -1;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &:hover {
+    &::before {
+      bottom: 70%;
+      left: 90%;
+      transition: all 0.5s ease-in-out;
+      transform: scale(1.1);
+      transition: all 0.5s ease-in-out;
+    }
+  }
+}
+
+
+// ********** Simple Button Mixins **********
+@mixin simpleButton($bgColor, $borderColor, $textColor) {
+  text-transform: capitalize;
+  padding: 7px 12px;
+  background-color: $bgColor;
+  border-color: $borderColor ;
+  color: $textColor;
+  font: normal normal 500 13px/18px 'Poppins', sans-serif;
+
+  @media all and (max-width: 767px) {
+    font: normal normal 500 12px/16px 'Poppins', sans-serif;
+  }
+}
+
+// ************ Secondary Button variant ************
+.btn-secondary-variant {
+  @include simpleButton($secondary, $secondary, $white);
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: $white;
+    border-color: $primary;
+    background-color: $primary;
+    animation: pulse-secondary-variant 1s;
+    box-shadow: 0 0 0 0.5em transparent;
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+  }
+
+  @keyframes pulse-secondary-variant {
+    0% {
+      box-shadow: 0 0 0 0$primary;
+    }
+  }
+}
+
+// ************ Secondary Button light ************
+.btn-light-secondary {
+  @include simpleButton($gray, $gray, $white);
+  padding: 10px 20px;
+  text-transform: capitalize;
+  font: normal normal 500 14px/1 'Poppins', sans-serif;
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+
+  @media all and (max-width: 767px) {
+    font: normal normal 500 12px/1 'Poppins', sans-serif;
+  }
+
+  &:hover,
+  &:focus {
+    color: $white;
+    border-color: $black;
+    background-color: $black;
+    animation: pulse-btn-light-primary 1s;
+    box-shadow: 0 0 0 0.5em transparent;
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+  }
+
+  @keyframes pulse-btn-light-primary {
+    0% {
+      box-shadow: 0 0 0 0 $black;
+    }
+  }
+}
+
+// ************ Success Button ************
+.btn-success {
+  @include simpleButton($success, $success, $white);
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: $white;
+    border-color: $success;
+    background-color: $success;
+    animation: pulse-btn-success 1s;
+    box-shadow: 0 0 0 0.5em transparent;
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+  }
+
+  @keyframes pulse-btn-success {
+    0% {
+      box-shadow: 0 0 0 0 $success;
+    }
+  }
+}
+
+// ************ Danger Button variant ************
+.btn-danger-variant {
+  @include simpleButton($danger, $danger, $white);
+  padding: 10px 20px;
+  text-transform: capitalize;
+  font: normal normal 500 14px/1 'Poppins', sans-serif;
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+
+  @media all and (max-width: 767px) {
+    font: normal normal 500 12px/1 'Poppins', sans-serif;
+  }
+
+  &:hover,
+  &:focus {
+    color: $danger;
+    border-color: $danger;
+    background-color: transparent;
+    animation: pulse-btn-danger-variant 1s;
+    box-shadow: 0 0 0 0.5em transparent;
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+  }
+
+  @keyframes pulse-btn-danger-variant {
+    0% {
+      box-shadow: 0 0 0 0 $danger;
+    }
+  }
+}
+
+// ***************** Default Button *****************
+
+.btn-default {
+  @include simpleButton($white, $formborder, $secondary);
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: $black;
+    background-color: $formborder;
+    border-color: $formborder;
+    animation: pulse-default-spilt 1s;
+    box-shadow: 0 0 0 0.5em transparent;
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+  }
+
+  @keyframes pulse-default-spilt {
+    0% {
+      box-shadow: 0 0 0 0 $formborder;
+    }
+  }
+
+}
+
+
+// ***************** Link Button *****************
+.link-btn {
+  all: unset;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  img {
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.2);
+    transition: all 0.2s ease-in-out;
+
+    img {
+      transform: scale(1.2);
+      transition: all 0.2s ease-in-out;
+    }
+  }
+}
+
+
+// ***************** Split Button *****************
+@mixin SplitButton($bgColor, $iconBg) {
+  color: $white;
+  padding: 0;
+  text-transform: uppercase;
+  // box-shadow: $shadowMd;
+  background-color: $bgColor;
+  border: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+
+  @media all and (max-width:767px) {
+    font-size: 10px;
+  }
+
+  span:first-child {
+    background-color: $iconBg;
+    padding: 12px 18px;
+    display: inline-block;
+  }
+
+  span:last-child {
+    display: inline-block;
+    padding: 12px 18px
+  }
+}
+
+.btn-success-split {
+  @include SplitButton($success, #4DC247);
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: $success;
+    border-color: $success;
+    animation: pulse-success-spilt 1s;
+    box-shadow: 0 0 0 0.5em transparent;
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+  }
+
+  @keyframes pulse-success-spilt {
+    0% {
+      box-shadow: 0 0 0 0$success;
+    }
+  }
+}
+
+.btn-danger-split {
+  @include SplitButton($danger, #C83D3E);
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: $danger;
+    border-color: $danger;
+    animation: pulse-danger-spilt 1s;
+    box-shadow: 0 0 0 0.5em transparent;
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+  }
+
+  @keyframes pulse-danger-spilt {
+    0% {
+      box-shadow: 0 0 0 0 $danger;
+    }
+  }
+}
+
+.btn-primary-split {
+  @include SplitButton($primary, #33497B);
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: $primary;
+    border-color: $primary;
+    animation: pulse-primary-spilt 1s;
+    box-shadow: 0 0 0 0.5em transparent;
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+  }
+
+  @keyframes pulse-primary-spilt {
+    0% {
+      box-shadow: 0 0 0 0 $primary;
+    }
+  }
+}
+
+
+
+// ***************** Pricing Button  ***************** 
+
+.btn-pricing {
+  padding: 4px 8px;
+  border: 0;
+  border-radius: $borderRadiusSm;
+  color: $primary;
+  background-color: $formborder;
+  font: normal normal 500 14px/1 'Poppins', sans-serif;
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+
+  @media all and (max-width: 767px) {
+    font: normal normal 500 12px/1 'Poppins',
+      sans-serif;
+    padding: 7px 14px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $white;
+    border-color: $white;
+    animation: pulse-pricing-spilt 1s;
+    box-shadow: 0 0 0 0.5em transparent;
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+  }
+
+  @keyframes pulse-pricing-spilt {
+    0% {
+      box-shadow: 0 0 0 0 $gray;
+    }
+  }
+}
+
+// ***************** Profile Button  ***************** 
+
+.btn-profile {
+  background: #E9E9EB 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 0px #00000029;
+  border: 1px solid $secondary;
+  padding: 7px 12px;
+  border-radius: $borderRadius;
+  color: $secondary;
+  text-transform: uppercase;
+  font: normal normal 500 14px/1 'Poppins', sans-serif;
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+
+  @media all and (max-width: 767px) {
+    font: normal normal 500 12px/1 'Poppins', sans-serif;
+  }
+
+  &.active {
+    color: $white;
+    background-color: $secondary;
+  }
+
+  &:hover,
+  &:focus {
+    color: $white;
+    background-color: $secondary;
+    border-color: $secondary;
+    animation: pulse-profile-btn 1s;
+    box-shadow: 0 0 0 0.5em transparent;
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+  }
+
+  @keyframes pulse-profile-btn {
+    0% {
+      box-shadow: 0 0 0 0 $secondary;
+    }
+  }
+}
+
+// ***************** Text Trcuncate mixins  ***************** 
+@mixin textTruncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// ***************** Card mixins  *****************
+
+@mixin card {
+  background: $white 0% 0% no-repeat padding-box;
+  border: 1px solid $borderLightColor;
+  border-radius: $borderRadiusLg;
+}
