@@ -36,7 +36,6 @@
     border-color: $primary;
     animation: pulse-primary 1s;
     box-shadow: 0 0 0 0.5em transparent;
-    transform: scale(1.1);
     transition: all 0.5s ease-in-out;
   }
 
@@ -59,7 +58,6 @@
     border-color: $white;
     animation: pulse-light 1s;
     box-shadow: 0 0 0 0.75em transparent;
-    transform: scale(1.1);
     transition: all 0.5s ease-in-out;
   }
 
@@ -82,7 +80,6 @@
     border-color: $secondary;
     animation: pulse-secondary 1s;
     box-shadow: 0 0 0 0.5em transparent;
-    transform: scale(1.1);
     transition: all 0.5s ease-in-out;
   }
 
@@ -106,7 +103,6 @@
     border-color: $danger;
     animation: pulse-danger 1s;
     box-shadow: 0 0 0 0.5em transparent;
-    transform: scale(1.1);
     transition: all 0.5s ease-in-out;
   }
 
@@ -144,7 +140,6 @@
       bottom: 70%;
       left: 90%;
       transition: all 0.5s ease-in-out;
-      transform: scale(1.1);
       transition: all 0.5s ease-in-out;
     }
   }
@@ -178,7 +173,6 @@
     background-color: $primary;
     animation: pulse-secondary-variant 1s;
     box-shadow: 0 0 0 0.5em transparent;
-    transform: scale(1.1);
     transition: all 0.5s ease-in-out;
   }
 
@@ -209,7 +203,6 @@
     background-color: $black;
     animation: pulse-btn-light-primary 1s;
     box-shadow: 0 0 0 0.5em transparent;
-    transform: scale(1.1);
     transition: all 0.5s ease-in-out;
   }
 
@@ -233,7 +226,6 @@
     background-color: $success;
     animation: pulse-btn-success 1s;
     box-shadow: 0 0 0 0.5em transparent;
-    transform: scale(1.1);
     transition: all 0.5s ease-in-out;
   }
 
@@ -264,7 +256,6 @@
     background-color: transparent;
     animation: pulse-btn-danger-variant 1s;
     box-shadow: 0 0 0 0.5em transparent;
-    transform: scale(1.1);
     transition: all 0.5s ease-in-out;
   }
 
@@ -289,7 +280,6 @@
     border-color: $formborder;
     animation: pulse-default-spilt 1s;
     box-shadow: 0 0 0 0.5em transparent;
-    transform: scale(1.1);
     transition: all 0.5s ease-in-out;
   }
 
@@ -314,11 +304,11 @@
 
   &:hover,
   &:focus {
-    transform: scale(1.2);
+    // transform: scale(1.2);
     transition: all 0.2s ease-in-out;
 
     img {
-      transform: scale(1.2);
+      // transform: scale(1.2);
       transition: all 0.2s ease-in-out;
     }
   }
@@ -366,7 +356,6 @@
     border-color: $success;
     animation: pulse-success-spilt 1s;
     box-shadow: 0 0 0 0.5em transparent;
-    transform: scale(1.1);
     transition: all 0.5s ease-in-out;
   }
 
@@ -388,7 +377,6 @@
     border-color: $danger;
     animation: pulse-danger-spilt 1s;
     box-shadow: 0 0 0 0.5em transparent;
-    transform: scale(1.1);
     transition: all 0.5s ease-in-out;
   }
 
@@ -410,7 +398,6 @@
     border-color: $primary;
     animation: pulse-primary-spilt 1s;
     box-shadow: 0 0 0 0.5em transparent;
-    transform: scale(1.1);
     transition: all 0.5s ease-in-out;
   }
 
@@ -447,7 +434,6 @@
     border-color: $white;
     animation: pulse-pricing-spilt 1s;
     box-shadow: 0 0 0 0.5em transparent;
-    transform: scale(1.1);
     transition: all 0.5s ease-in-out;
   }
 
@@ -488,7 +474,6 @@
     border-color: $secondary;
     animation: pulse-profile-btn 1s;
     box-shadow: 0 0 0 0.5em transparent;
-    transform: scale(1.1);
     transition: all 0.5s ease-in-out;
   }
 

@@ -69,18 +69,18 @@ const Register = () => {
         </div>
       </form>
       {/* Social Button  */}
-      <div className="mt-4 d-flex flex-column flex-xl-row gap-3 gap-xl-2 mb-3 mb-md-4">
-        <button type="button" className="btn btn-default d-flex gap-1 align-items-center justify-content-center">
+      <div className="mt-4 d-flex flex-column flex-xl-row gap-3 mb-3 mb-md-4">
+        <button type="button" className="btn btn-default d-flex gap-1 align-items-center justify-content-center flex-grow-1">
           <Icons.Google />
-          <span>Login in with Google</span>
+          <span>Google</span>
         </button>
-        <button type="button" className="btn btn-secondary-variant d-flex gap-1 align-items-center justify-content-center">
+        <button type="button" className="btn btn-secondary-variant d-flex gap-1 align-items-center justify-content-center flex-grow-1">
           <Icons.Facebook />
-          <span>Login in with Facebook</span>
+          <span>Facebook</span>
         </button>
-        <button type="button" className="btn btn-success d-flex gap-1 align-items-center justify-content-center">
+        <button type="button" className="btn btn-success d-flex gap-1 align-items-center justify-content-center flex-grow-1">
           <Icons.Whatsapp />
-          <span>Login in with Whatsapp</span>
+          <span>Whatsapp</span>
         </button>
       </div>
       <div className="text-center">
